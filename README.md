@@ -20,18 +20,25 @@ And supported for now,
 - fastQC (< v0.11.7)
 - multiQC (< v1.6.dev0)
 
+### Installation
+Integration with [Docker]() is in progress.
+
+Thanks to nextflow. installation is not a must, you just have to call it from command line as:
+
+        nextflow run RNAseq_QC.nf --fastq_files 'mydir/*.fastq.gz'
+
 ### Typical usage
 * For paired end fastq files:
 
 `nextflow run RNAseq_QC.nf --fastq_files 'mydir/*.fastq.gz'`
 
-  Which produces this [multiqc_report_paired.html](Docs/multiqc_report_paired.html)
+  Which produces this `Docs/multiqc_report_paired.html`
 
 * For single end fastq files:
 
 `nextflow run RNAseq_QC.nf --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false`
 
-  Which produces this [multiqc_report_single.html](Docs/multiqc_report_single.html)
+  Which produces this Docs/multiqc_report_single.html
 
 #### Arguments
   `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
