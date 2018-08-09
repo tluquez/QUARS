@@ -6,7 +6,7 @@ vim: syntax=groovy
 
 MIT License
 
-Copyright (c) [2018] [Grupo de Bioquimica Experimental y Computacional from the Pontificia Universidad Javeriana and Tain Velasco-Luquez]
+Copyright (c) [2018] [Grupo de Investigación en Terapia Celular y Molecular from the Pontificia Universidad Javeriana and Tain Velasco-Luquez]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
