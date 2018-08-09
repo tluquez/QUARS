@@ -1,1 +1,1 @@
-# Welcome to QUASAR ~ Quality Control for RNAseq
+# Welcome to QUARS ~ **QUA**lity control for **R**NA_**S**eq

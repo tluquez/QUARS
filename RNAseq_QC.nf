@@ -46,11 +46,11 @@ def usage() {
     log.info"""
 
     ============================================================================
-              QUASAR ~ Quality Control for RNAseq, a nextflow pipeline
+              QUARS ~ QUAlity control for RNA_Seq, a nextflow pipeline
     ============================================================================
 
     Description:
-    Quasar creates a MultiQC report out of the FastQC and Fastp results of both single and paired end RNAseq reads. It also saves the Fastp cleaned files to a new dir as .fq.gz.
+    QUARS creates a MultiQC report out of the FastQC and Fastp results of both single and paired end RNAseq reads. It also saves the Fastp cleaned files to a new dir as .fq.gz.
 
     Typical usage:
     nextflow run RNAseq_QC.nf --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false
