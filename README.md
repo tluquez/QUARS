@@ -21,24 +21,36 @@ And supported for now,
 - multiQC (< v1.6.dev0)
 
 ### Installation
-Integration with [Docker]() is in progress.
+Integration with [Docker](https://www.docker.com) is in progress.
 
 Thanks to nextflow. installation is not a must, you just have to call it from command line as:
 
-        nextflow run RNAseq_QC.nf --fastq_files 'mydir/*.fastq.gz'
+    nextflow run TainVelasco-Luquez/quars.nf
+or
+
+    nextflow run https://github.com/TainVelasco-Luquez/quars.nf
+
+Alternatively you can clone the repo and run it locally by
+
+    git clone https://github.com/TainVelasco-Luquez/QUARS
+    nextflow run TainVelasco-Luquez/quars.nf
+
+If you are running on a cluster:
+
+    nextflow run TainVelasco-Luquez/quars.nf -profile condor
 
 ### Typical usage
 * For paired end fastq files:
 
-`nextflow run RNAseq_QC.nf --fastq_files 'mydir/*.fastq.gz'`
+      nextflow run quars.nf --fastq_files 'mydir/*.fastq.gz'
 
-  Which produces this `Docs/multiqc_report_paired.html`
+  Which produces this [multiqc_report_paired.html](https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_paired.html)
 
 * For single end fastq files:
 
-`nextflow run RNAseq_QC.nf --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false`
+      nextflow run quars.nf --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false
 
-  Which produces this Docs/multiqc_report_single.html
+  Which produces this [multiqc_report_single.html](https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_single.html)
 
 #### Arguments
   `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
@@ -47,6 +59,7 @@ Thanks to nextflow. installation is not a must, you just have to call it from co
 #### Options
   `--outdir `                     Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is search in the current dir for the folder "Results" (_i.e._ "./Results/"). Be sure to add the final "/" to the path.
   `--cpus`                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
+  `-profile condor`               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to `nextflow.config` and change the required settings.
 
 ## Credits
 @TainVelasco-Luquez
