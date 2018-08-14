@@ -33,15 +33,6 @@ Tain Velasco-Luquez <tvelasco@javeriana.edu.co> @TainVelasco-Luquez: Design and 
 Caution note: This code is heavily influenced by NGI-RNAseq by Phil Ewels.
 */
 
-/*
-Params.arg can be supplied when running the command, and automatically replace the default ones, by ussing the format: --arg value (e.g. nextflow run file.nf --fastq_files '/home/tain/')
-*/
-
-params.fastq_files = './Data/*_{1,2}.fastq'
-params.outdir = './Results/'
-params.singleEnd = true
-params.cpus = 6
-
 def usage() {
     log.info"""
 

@@ -1,4 +1,4 @@
-# Welcome to QUARS ~ **QUA**lity control for **R**NA_**S**eq
+# Welcome to QUARS ~ **QUA**lity control for **R**na_**S**eq
 QUARS creates a [MultiQC](http://multiqc.info) report out of the [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [Fastp](https://github.com/OpenGene/fastp) results of both single and paired end RNAseq raw reads (.fq and simmilars). Powered by [Nextflow](https://www.nextflow.io).
 
 ## Motivation
@@ -25,19 +25,19 @@ Integration with [Docker](https://www.docker.com) is in progress.
 
 Thanks to nextflow. installation is not a must, you just have to call it from command line as:
 
-    nextflow run TainVelasco-Luquez/quars.nf
+    nextflow run TainVelasco-Luquez/QUARS
 or
 
-    nextflow run https://github.com/TainVelasco-Luquez/quars.nf
+    nextflow run https://github.com/TainVelasco-Luquez/QUARS
 
 Alternatively you can clone the repo and run it locally by
 
     git clone https://github.com/TainVelasco-Luquez/QUARS
     nextflow run TainVelasco-Luquez/quars.nf
 
-If you are running on a cluster:
+If you are running on a cluster with [HTCondor](https://research.cs.wisc.edu/htcondor/):
 
-    nextflow run TainVelasco-Luquez/quars.nf -profile condor
+    nextflow run TainVelasco-Luquez/QUARS -profile condor
 
 ### Typical usage
 * For paired end fastq files:
