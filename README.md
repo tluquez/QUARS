@@ -27,34 +27,34 @@ Integration with [Docker](https://www.docker.com) is in progress.
 
 Thanks to nextflow, installation is not a must, you just have to call it from command line as (QUARS attemps to fetch `.fastq`data in `./Data`):
 
-    nextflow run TainVelasco-Luquez/QUARS
+    nextflow run TainVelasco-Luquez/QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
 or
 
-    nextflow run https://github.com/TainVelasco-Luquez/QUARS
+    nextflow run https://github.com/TainVelasco-Luquez/QUARS  --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
 Alternatively you can clone the repo and run it locally by
 
     git clone https://github.com/TainVelasco-Luquez/QUARS
-    nextflow run TainVelasco-Luquez/quars.nf
+    nextflow run QUARS/quars.nf  --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
 If you are running on a cluster with [HTCondor](https://research.cs.wisc.edu/htcondor/):
 
-    nextflow run TainVelasco-Luquez/QUARS -profile condor
+    nextflow run TainVelasco-Luquez/QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16 -profile condor
 
 To modify memory, cpus and more options when running in clusters, go to [nextflow.config](https://github.com/TainVelasco-Luquez/QUARS/nextflow.config).
 
 ### Typical usage
-* For paired end fastq files:
-
-      nextflow run QUARS --fastq_files 'mydir/*.fastq.gz'
-
-  Which produces this [multiqc_report_paired.html](https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_paired.html)
-
 * For single end fastq files:
 
-      nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false
+      nextflow run QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
-  Which produces this [multiqc_report_single.html](https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_single.html)
+  Which produces this [multiqc_report_single.html](http://htmlpreview.github.com/https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_single.html)
+
+* For paired end fastq files:
+
+      nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false --cpus 16
+
+  Which produces this [multiqc_report_paired.html](http://htmlpreview.github.com/https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_paired.html)
 
 #### Arguments
   - `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
