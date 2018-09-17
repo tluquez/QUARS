@@ -54,7 +54,7 @@ To modify memory, cpus and more options when running in clusters, go to [nextflo
 
       nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false --cpus 16
 
-  Which produces this [multiqc_report_paired.html](http://htmlpreview.github.com/https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_paired.html)
+  Which produces this [multiqc_report_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/cb82bb28/Docs/multiqc_report_paired.html)
 
 #### Arguments
   - `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
