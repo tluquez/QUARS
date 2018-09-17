@@ -48,13 +48,16 @@ To modify memory, cpus and more options when running in clusters, go to [nextflo
 
       nextflow run QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
-  Which produces this [multiqc_report_single.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/0d06a9b1/Docs/multiqc_report_single.html)
+  Which produces this [Docs/multiqc_report_single.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/0d06a9b1/Docs/multiqc_report_single.html)
 
 * For paired end fastq files:
 
       nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false --cpus 16
 
-  Which produces this [multiqc_report_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/cb82bb28/Docs/multiqc_report_paired.html)
+  Which produces this [Docs/multiqc_report_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/cb82bb28/Docs/multiqc_report_paired.html)
+
+#### Timeline and report
+In addition to the main `.html` report, QUARS also generates a processess execution timeline (see [Docs/timeline_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/timeline_RNAseqQC.html))) and a execution report, with a brief summary of the tasks and their consumption of computational resurces (see [Docs/report_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/report_RNAseqQC.html)). 
 
 #### Arguments
   - `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
