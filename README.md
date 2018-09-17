@@ -48,7 +48,7 @@ To modify memory, cpus and more options when running in clusters, go to [nextflo
 
       nextflow run QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
-  Which produces this [multiqc_report_single.html](http://htmlpreview.github.com/https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/multiqc_report_single.html)
+  Which produces this [multiqc_report_single.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/0d06a9b1/Docs/multiqc_report_single.html)
 
 * For paired end fastq files:
 
