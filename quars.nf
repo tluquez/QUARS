@@ -55,7 +55,7 @@ def usage() {
     Options:
       --outdir                      Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is to create in the current dir the folder "Results" (i.e. "$baseDir/Results/").
       --cpus                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
-      --multiqc_config              .yaml file to configure multiqc title, comments, subtitles and more. if no supplied, then QUARS assumes is "$baseDir/multiqc_config.yaml".
+      --multiqc_config              Input .yaml file to configure multiqc title, comments, subtitles and more. if no supplied, then QUARS assumes is "$baseDir/multiqc_config.yaml".
       -profile condor               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to nextflow.config and change the required settings.
 
     Getting Help
@@ -175,7 +175,7 @@ process fastQC {
 
       script:
       """
-      multiqc . --config ${multiqc_config} -f -m fastqc -m fastp
+      multiqc . --cl-config ${multiqc_config} -f -m fastqc -m fastp
       """
     }
 
