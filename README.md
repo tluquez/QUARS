@@ -1,3 +1,5 @@
+<img alt="QUARS_logo" src="Docs/QUARS_logo.png" width="550" height="350">
+
 # Welcome to QUARS ~ **QUA**lity control for **R**na_**S**eq
 QUARS creates a [MultiQC](http://multiqc.info) report out of the [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [Fastp](https://github.com/OpenGene/fastp) results of both single and paired end RNAseq raw reads (.fq and simmilars). Powered by [Nextflow](https://www.nextflow.io).
 
@@ -57,7 +59,7 @@ To modify memory, cpus and more options when running in clusters, go to [nextflo
   Which produces this [Docs/multiqc_report_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/cb82bb28/Docs/multiqc_report_paired.html)
 
 #### Timeline and report
-In addition to the main `.html` report, QUARS also generates a processess execution timeline (see [Docs/timeline_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/timeline_RNAseqQC.html))) and a execution report, with a brief summary of the tasks and their consumption of computational resurces (see [Docs/report_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/report_RNAseqQC.html)). 
+In addition to the main `.html` report, QUARS also generates a processess execution timeline (see [Docs/timeline_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/timeline_RNAseqQC.html))) and a execution report, with a brief summary of the tasks and their consumption of computational resurces (see [Docs/report_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/report_RNAseqQC.html)).
 
 #### Arguments
   - `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
@@ -67,13 +69,11 @@ In addition to the main `.html` report, QUARS also generates a processess execut
   - `--outdir `                     Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is to create in the current dir the folder "Results" (_i.e._ "./Results/").
   - `--cpus`                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
   - `-profile condor`               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to `nextflow.config` and change the required settings.
+  - `--multiqc_config`              Input a `.yaml` file to configure multiqc title, comments, subtitles and more. if no supplied, then QUARS assumes is "./multiqc_config.yaml". Customisable items are fully described in [MultiQC documentation](http://multiqc.info/docs/#customising-reports).
 
 #### Getting Help
 
     nextflow run QUARS --help
-or
-
-    nextflow quars.nf --help
 
 ## Credits
 @TainVelasco-Luquez

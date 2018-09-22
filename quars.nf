@@ -49,13 +49,15 @@ def usage() {
     nextflow run quars.nf --fastq_files 'mydir/*.fastq.gz'
 
     Mandatory arguments:
-      --fastq_files                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (i.e. "./Data/")
+      --fastq_files                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (i.e. "$baseDir/Data/")
       --singleEnd                   Logical indicating whether the files are single ("true". This is the default beahaviour) or paired end ("false").
 
     Options:
-      --outdir                      Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is to create in the current dir the folder "Results" (i.e. "./Results/"). 
+      --outdir                      Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is to create in the current dir the folder "Results" (i.e. "$baseDir/Results/").
       --cpus                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
+      --multiqc_config              .yaml file to configure multiqc title, comments, subtitles and more. if no supplied, then QUARS assumes is "$baseDir/multiqc_config.yaml".
       -profile condor               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to nextflow.config and change the required settings.
+
     Getting Help
       nextflow run QUARS --help
     """.stripIndent()
@@ -173,7 +175,7 @@ process fastQC {
 
       script:
       """
-      multiqc . -f -m fastqc -m fastp
+      multiqc . --config ${multiqc_config} -f -m fastqc -m fastp
       """
     }
 
