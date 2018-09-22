@@ -4,14 +4,13 @@
 QUARS creates a [MultiQC](http://multiqc.info) report out of the [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [Fastp](https://github.com/OpenGene/fastp) results of both single and paired end RNAseq raw reads (.fq and simmilars). Powered by [Nextflow](https://www.nextflow.io).
 
 ## Motivation
-If like me, you have waited several hours or days for some RNAseq pipelines to finish, just to realise that the initial quality control step required further trimming! or simply that my raw reads were so bad they need to be excluded from further analysis. Then, like me, you will enjoy QUARS.
+If like me, you have waited several hours, or days, for some RNAseq pipelines to finish, just to realise that the initial quality control step required further trimming! Or, simply, that my raw reads were so bad they need to be excluded from further analysis! Then, like me, you will enjoy QUARS.
 
 QUARS is an attemp to:
 1. Make **only** quality control for RNAseq raw reads, before the big steps of annotation quantification and differential expression.
-2. Run in a parallel/threating environment a quality control test for RNAseq.
+2. Run in a parallel/threating environment a pre-alignment quality control test for RNAseq.
 
 ## Getting Started
-So you have decided to use QUARS, here is what you'll need
 
 ### Prerequisites
 QUARS builds upon
