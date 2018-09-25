@@ -177,7 +177,8 @@ process fastQC {
 
       script:
       """
-      multiqc . -c ${multiqc_config} -f -m fastqc -m fastp
+      multiqc . -f --config ${multiqc_config} \\
+        -m fastqc -m fastp
       """
     }
 
