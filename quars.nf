@@ -165,7 +165,7 @@ process fastQC {
 
     process multiQC {
 
-      publishDir pattern: "*QUARS_report.html", path: { params.outdir }, mode: 'copy'
+      publishDir pattern: "*QUARS.html", path: { params.outdir }, mode: 'copy'
 
       input:
       file ('fastQC/*') from fastqc_results_ch.collect()
@@ -173,7 +173,7 @@ process fastQC {
       file multiqc_config
 
       output:
-      file('*QUARS_report.html')
+      file('*QUARS.html')
 
       script:
       """
