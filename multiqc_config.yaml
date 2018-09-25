@@ -1,7 +1,7 @@
 # Heading
 title: "QUARS ~ QUAlity control for Rna_Seq"
 intro_text: "Easy and straightforward pre-alignment quality control for your RNAseq experiments. Let's QUARS!"
-custom_logo: "~/.nextflow/assets/TainVelasco-Luquez/QUARS/Docs"
+custom_logo: "~/.nextflow/assets/TainVelasco-Luquez/QUARS/Docs/QUARS_logo.png"
 custom_logo_url: "https://github.com/TainVelasco-Luquez/QUARS"
 custom_logo_title: "QUARS"
 # Output
