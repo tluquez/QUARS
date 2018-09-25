@@ -165,7 +165,7 @@ process fastQC {
 
     process multiQC {
 
-      publishDir pattern: "*multiqc_report.html", path: { params.outdir + "multiQC/" }, mode: 'copy'
+      publishDir pattern: "*QUARS_report.html", path: { params.outdir }, mode: 'copy'
 
       input:
       file ('fastQC/*') from fastqc_results_ch.collect()
@@ -173,7 +173,7 @@ process fastQC {
       file multiqc_config
 
       output:
-      file('*multiqc_report.html')
+      file('*QUARS_report.html')
 
       script:
       """
@@ -183,5 +183,5 @@ process fastQC {
 
     workflow.onComplete {
       println "\n Pipeline completed at: $workflow.complete"
-      println "\n Execution status: ${ workflow.success ? 'OK' : 'failed' }"
+      println "\n Execution status: ${ workflow.success ? 'OK' : 'Failed' }"
     }
