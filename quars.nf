@@ -80,7 +80,7 @@ Channel
 .ifEmpty { error "Cannot find any reads matching: ${params.fastq_files}" }
 .set { files_QC_ch }
 
-println ("\n Fastp is about to run... \n")
+log.info "\n Fastp is about to run... \n")
 
 process fastp {
 
@@ -124,7 +124,7 @@ process fastp {
   .ifEmpty { error "Cannot find any reads matching: ${params.fastq_files}" }
   .set { files_QC_2_ch }
 
-println ("\n fastQC is about to run... \n")
+log.info "\n FastQC is about to run... \n")
 
 process fastQC {
     tag { fastqc_tag }
@@ -160,9 +160,9 @@ process fastQC {
     * This step has the code structure from https://github.com/SciLifeLab/NGI-RNAseq/blob/master/main.nf all credit is for its authors.
     */
 
-    println ("\n mutiQC is about to run... \n")
+    log.info " MutiQC is about to run ... "
     multiqc_config = file(params.multiqc_config)
-    
+
     process multiQC {
 
       publishDir pattern: "*multiqc_report.html", path: { params.outdir + "multiQC/" }, mode: 'copy'
@@ -170,7 +170,7 @@ process fastQC {
       input:
       file ('fastQC/*') from fastqc_results_ch.collect()
       file ('fastp/*') from fastp_results_ch.collect()
-      file multiqc_config.yaml
+      file multiqc_config
 
       output:
       file('*multiqc_report.html')
