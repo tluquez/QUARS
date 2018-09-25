@@ -161,7 +161,8 @@ process fastQC {
     */
 
     println ("\n mutiQC is about to run... \n")
-
+    multiqc_config = file(params.multiqc_config)
+    
     process multiQC {
 
       publishDir pattern: "*multiqc_report.html", path: { params.outdir + "multiQC/" }, mode: 'copy'
