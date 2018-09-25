@@ -1,6 +1,9 @@
+# Heading
 title: "QUARS ~ QUAlity control for Rna_Seq"
 intro_text: "Easy and straightforward pre-alignment quality control for your RNAseq experiments. Let's QUARS!"
-report_comment: "Powered by MultiQC and nextflow."
-custom_logo: "https://github.com/TainVelasco-Luquez/QUARS/blob/master/Docs/QUARS_logo.png"
+custom_logo: "~/.nextflow/assets/TainVelasco-Luquez/QUARS/Docs"
 custom_logo_url: "https://github.com/TainVelasco-Luquez/QUARS"
-custom_logo_title: "QUARS_logo"
+custom_logo_title: "QUARS"
+# Output
+output_fn_name: QUARS_report.html
+data_dir_name: QUARS_data_from_multiqc
