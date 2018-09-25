@@ -80,7 +80,7 @@ Channel
 .ifEmpty { error "Cannot find any reads matching: ${params.fastq_files}" }
 .set { files_QC_ch }
 
-log.info "\n Fastp is about to run... \n")
+log.info " Fastp is about to run ... "
 
 process fastp {
 
@@ -124,7 +124,7 @@ process fastp {
   .ifEmpty { error "Cannot find any reads matching: ${params.fastq_files}" }
   .set { files_QC_2_ch }
 
-log.info "\n FastQC is about to run... \n")
+log.info " FastQC is about to run ... "
 
 process fastQC {
     tag { fastqc_tag }
