@@ -28,45 +28,45 @@ Integration with [Docker](https://www.docker.com) is in progress.
 
 Thanks to nextflow, installation is not a must, you just have to call it from command line as (QUARS attemps to fetch `.fastq`data in `./Data`):
 
-    nextflow run TainVelasco-Luquez/QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
+    nextflow run TainVelasco-Luquez/QUARS --fastq_files '*.fastq.gz' --cpus 16
 or
 
-    nextflow run https://github.com/TainVelasco-Luquez/QUARS  --fastq_files 'mydir/*.fastq.gz' --cpus 16
+    nextflow run https://github.com/TainVelasco-Luquez/QUARS  --fastq_files '*.fastq.gz' --cpus 16
 
 Alternatively you can clone the repo and run it locally by
 
     git clone https://github.com/TainVelasco-Luquez/QUARS
-    nextflow run QUARS/quars.nf  --fastq_files 'mydir/*.fastq.gz' --cpus 16
+    nextflow run QUARS/quars.nf  --fastq_files '*.fastq.gz' --cpus 16
 
 If you are running on a cluster with [HTCondor](https://research.cs.wisc.edu/htcondor/):
 
-    nextflow run TainVelasco-Luquez/QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16 -profile condor
+    nextflow run TainVelasco-Luquez/QUARS --fastq_files '*.fastq.gz' --cpus 16 -profile condor
 
 To modify memory, cpus and more options when running in clusters, go to [nextflow.config](https://github.com/TainVelasco-Luquez/QUARS/nextflow.config).
 
 ### Typical usage
 * For single end fastq files:
 
-      nextflow run QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
+      nextflow run QUARS --fastq_files '*.fastq.gz' --cpus 16
 
-  Which produces this [Docs/multiqc_report_single.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/0d06a9b1/Docs/multiqc_report_single.html)
+  Which produces this [Docs/QUARS_single.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/f2290cb7/Docs/QUARS_single.html)
 
 * For paired end fastq files:
 
-      nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false --cpus 16
+      nextflow run QUARS --fastq_files '*_{1,2}.fastq.gz' --singleEnd false --cpus 16
 
-  Which produces this [Docs/multiqc_report_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/cb82bb28/Docs/multiqc_report_paired.html)
+  Which produces this [Docs/QUARS_paired.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/f2290cb7/Docs/QUARS_paired.html)
 
 #### Timeline and report
-In addition to the main `.html` report, QUARS also generates a processess execution timeline (see [Docs/timeline_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/timeline_RNAseqQC.html))) and a execution report, with a brief summary of the tasks and their consumption of computational resurces (see [Docs/report_RNAseqQC.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/d144717f/Docs/report_RNAseqQC.html)).
+In addition to the main `QUARS.html` report, QUARS also generates a processess execution timeline (see [Docs/timeline_QUARS.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/f2290cb7/Docs/timeline_QUARS.html))) and an execution report, with a brief summary of the tasks and their consumption of computational resurces (see [Docs/report_QUARS.html](https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/f2290cb7/Docs/report_QUARS.html)).
 
 #### Arguments
   - `--fastq_files`                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (_i.e._ "./Data/")
   - `--singleEnd`                   Logical indicating whether the files are single ("true". This is the default beahaviour) or paired end ("false").
+  - `--cpus`                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
 
 #### Options
   - `--outdir `                     Absolute path to the output data (must be enclosed in quotes). If no path specified, the default behaviour is to create in the current dir the folder "Results" (_i.e._ "./Results/").
-  - `--cpus`                        Integer specifying the number of cores to use. Be aware of the limits of your machine.
   - `-profile condor`               Used when in a cluster with the HTCondor executor. For configuration of the HTCondor parameters go to `nextflow.config` and change the required settings.
   - `--multiqc_config`              Input a `.yaml` file to configure multiqc title, comments, subtitles and more. if no supplied, then QUARS assumes is "./multiqc_config.yaml". Customisable items are fully described in [MultiQC documentation](http://multiqc.info/docs/#customising-reports).
 
