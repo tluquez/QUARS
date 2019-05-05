@@ -26,7 +26,7 @@ In future releases, Docker will simplify your use of QUARS, as there will no lon
 ### Installation
 Integration with [Docker](https://www.docker.com) is in progress.
 
-Thanks to nextflow, installation is not a must, you just have to call it from command line as (QUARS attemps to fetch `.fastq`data in `./Data`):
+Thanks to nextflow, installation is not a must, you just have to call it from command line as: 
 
     nextflow run TainVelasco-Luquez/QUARS --fastq_files '*.fastq.gz' --cpus 16
 or
