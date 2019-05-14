@@ -44,9 +44,9 @@ def usage() {
     QUARS creates a MultiQC report out of the FastQC and Fastp results of both single and paired end RNAseq reads. It also saves the Fastp cleaned files to a new dir as .fq.gz.
 
     Typical usage:
-    nextflow run quars.nf --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false
+    nextflow run QUARS --fastq_files 'mydir/*_{1,2}.fastq.gz' --singleEnd false --cpus 16
 
-    nextflow run quars.nf --fastq_files 'mydir/*.fastq.gz'
+    nextflow run QUARS --fastq_files 'mydir/*.fastq.gz' --cpus 16
 
     Mandatory arguments:
       --fastq_files                 Absolute path to input .fastq data (must be enclosed with single quotes). If no path specified, the default behaviour is search in the current dir for the folder "Data" (i.e. "$baseDir/Data/")
