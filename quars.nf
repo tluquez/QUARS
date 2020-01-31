@@ -105,19 +105,11 @@ process fastp {
 
   if (params.singleEnd == true) {
     """
-<<<<<<< HEAD
     fastp -w ${params.cpus} --dont_overwrite -i ${fastq_file[0]} -o ${samplename}_fastp.fastq.gz -h ${samplename}_fastp.html -j ${samplename}_fastp.json
     """
     } else {
       """
       fastp -w ${params.cpus} --dont_overwrite --detect_adapter_for_pe  -i ${fastq_file[0]} -I ${fastq_file[1]} -o ${samplename}_1_fastp.fastq.gz -O ${samplename}_2_fastp.fastq.gz -h ${samplename}_fastp.html -j ${samplename}_fastp.json
-=======
-    fastp -p -w ${params.cpus} --dont_overwrite -i ${fastq_file[0]} -o ${samplename}_fastp.fastq.gz -h ${samplename}_fastp.html -j ${samplename}_fastp.json
-    """
-    } else {
-      """
-      fastp -p -w ${params.cpus} --dont_overwrite -i ${fastq_file[0]} -I ${fastq_file[1]} -o ${samplename}_1_fastp.fastq.gz -O ${samplename}_2_fastp.fastq.gz -h ${samplename}_fastp.html -j ${samplename}_fastp.json
->>>>>>> b03fa00ab229ed70785e4133281a9e2f451847f4
       """
     }
   }
