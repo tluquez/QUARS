@@ -1,0 +1,9 @@
+# Heading
+title: "QUARS ~ QUAlity control for Rna_Seq"
+intro_text: "Easy and straightforward pre-alignment quality control for your RNAseq experiments. Let's QUARS!"
+custom_logo: "https://cdn.rawgit.com/TainVelasco-Luquez/QUARS/873d7f38/Docs/QUARS_logo.png"
+custom_logo_url: "https://github.com/TainVelasco-Luquez/QUARS"
+custom_logo_title: "QUARS"
+# Output
+output_fn_name: QUARS.html
+data_dir_name: QUARS_data_from_multiqc
